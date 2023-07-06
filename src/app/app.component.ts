@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'jth-fe-gc-ta35-prob2-07-2023';
+
+  nombre: string = '';
+  email: string = '';
+  mensaje: string = '';
+  seguridad: string = '';
+
+  dato: any;
+
+  enviar() {
+    if (this.nombre != '' && this.email != '' && this.mensaje != '' && this.seguridad == '5') {
+
+      this.dato = {
+        "nombre": this.nombre,
+        "email": this.email,
+        "mensaje": this.mensaje
+      }
+    } else {
+      alert('Los campos no son correctos.');
+    }
+
+  }
 }
